@@ -5,6 +5,7 @@
 # congress
 
 <!-- badges: start -->
+[![Travis build status](https://travis-ci.org/kjhealy/congress.svg?branch=master)](https://travis-ci.org/kjhealy/congress)
 <!-- badges: end -->
 
 `congress` is a dataset of individuals who have served in the US Congress since 1945. Each row is an individual's spell in Congress in some elected office: US Representative, US Senator, President, or Vice-President.
