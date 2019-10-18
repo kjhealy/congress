@@ -8,6 +8,7 @@ Authors@R:
            email = "kjhealy@gmail.com")
 Description: US Congressional Representatives 1945-2019, including party affiliations and demographic information.
 License: MIT + file LICENSE
+Depends: R (>= 3.5)
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.1
