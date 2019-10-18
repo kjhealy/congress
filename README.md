@@ -1,17 +1,6 @@
----
-output: github_document
----
-
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  fig.path = "man/figures/README-",
-  out.width = "100%"
-)
-```
+
 
 # congress
 
@@ -44,7 +33,8 @@ While using `install_github()` works just fine, it would be nicer to be able to 
 
 First, install `drat`:
 
-```{r drat, eval = FALSE}
+
+```r
 if (!require("drat")) {
     install.packages("drat")
     library("drat")
@@ -53,19 +43,22 @@ if (!require("drat")) {
 
 Then use `drat` to tell R about the repository where `congress` is hosted:
 
-```{r drat-congress}
+
+```r
 drat::addRepo("kjhealy")
 ```
 
 You can now install `congress`:
 
-```{r congress-drat, eval = FALSE}
+
+```r
 install.packages("congress")
 ```
 
 To ensure that the `congress` repository is always available, you can add the following line to your `.Rprofile` or `.Rprofile.site` file:
 
-```{r rprofile}
+
+```r
 drat::addRepo("kjhealy")
 ```
 
@@ -78,18 +71,40 @@ Note that the drat repository only contains data packages that are not on CRAN, 
 
 The data is stored as a tibble and works best with (but does not strictly require) the [tidyverse](http://tidyverse.org/) libraries.
 
-```{r libs}
+
+```r
 library(tidyverse)
 ```
 
 Load the data:
 
-```{r load}
+
+```r
 library(congress)
 ```
 
 To look at the tibble that contains the data, do this:
 
-```{r load-doc}
+
+```r
 congress
+#> # A tibble: 21,009 x 32
+#>    congress   pid last  first middle suffix born       death      sex  
+#>       <dbl> <dbl> <chr> <chr> <chr>  <chr>  <date>     <date>     <chr>
+#>  1       79     1 Aber… Thom… Gerst… <NA>   1903-05-16 1953-01-23 M    
+#>  2       79     2 Adams Sher… <NA>   <NA>   1899-01-08 1986-10-27 M    
+#>  3       79     3 Aiken Geor… David  <NA>   1892-08-20 1984-11-19 M    
+#>  4       79     4 Allen Asa   Leona… <NA>   1891-01-05 1969-01-05 M    
+#>  5       79     5 Allen Leo   Elwood <NA>   1898-10-05 1973-01-19 M    
+#>  6       79     6 Almo… J.    Linds… Jr.    1898-06-15 1986-04-14 M    
+#>  7       79     7 Ande… Herm… Carl   <NA>   1897-01-27 1978-07-26 M    
+#>  8       79     8 Ande… Clin… Presba <NA>   1895-10-23 1975-11-11 M    
+#>  9       79     9 Ande… John  Zuing… <NA>   1904-03-22 1981-02-09 M    
+#> 10       79    10 Andr… Augu… Herman <NA>   1890-10-11 1958-01-14 M    
+#> # … with 20,999 more rows, and 23 more variables: position <chr>,
+#> #   party <chr>, state <chr>, district <chr>, start <date>, end <chr>,
+#> #   religion <chr>, race <chr>, education <chr>, occ1 <chr>, occ2 <chr>,
+#> #   occ3 <chr>, mil1 <chr>, mil2 <chr>, mil3 <chr>, start_year <date>,
+#> #   end_year <date>, start_age <int>, poc <chr>, days_old <dbl>,
+#> #   entry_age <int>, end_career <date>, yr_fac <fct>
 ```
