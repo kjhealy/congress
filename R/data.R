@@ -2,7 +2,7 @@
 #'
 #' US Congressional Representatives since 1945 (House, Senate, Presidency, Vice-Presidency)
 #'
-#' @format A tibble with 21,009 rows and 32 columns.
+#' @format A tibble with 20,598 rows and 32 columns.
 #'
 #' \describe{
 #' \item{\code{congress}}{Congressional session.}

@@ -4,7 +4,8 @@
 \name{congress}
 \alias{congress}
 \title{US Congress}
-\format{A tibble with 21,009 rows and 32 columns.
+\format{
+A tibble with 20,598 rows and 32 columns.
 
 \describe{
 \item{\code{congress}}{Congressional session.}
@@ -39,7 +40,8 @@
 \item{\code{entry_age}}{Age when first elected to position, in years.}
 \item{\code{end_career}}{End date of final term.}
 \item{\code{yr_fac}}{Same as start_year but coded as a factor instead of a date.}
-}}
+}
+}
 \source{
 .
 }

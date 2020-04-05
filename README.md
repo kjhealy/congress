@@ -1,28 +1,38 @@
+
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-
-
 
 # congress
 
 <!-- badges: start -->
-[![Travis build status](https://travis-ci.org/kjhealy/congress.svg?branch=master)](https://travis-ci.org/kjhealy/congress)
+
+[![Travis build
+status](https://travis-ci.org/kjhealy/congress.svg?branch=master)](https://travis-ci.org/kjhealy/congress)
 <!-- badges: end -->
 
-`congress` is a dataset of individuals who have served in the US Congress since 1945. Each row is an individual's spell in Congress in some elected office: US Representative, US Senator, President, or Vice-President.
+`congress` is a dataset of individuals who have served in the US
+Congress since 1945. Each row is an individual’s spell in Congress in
+some elected office: US Representative, US Senator, President, or
+Vice-President.
 
 ## Installation
 
-
-The `congress` package contains term-level data on every US Congressional Representative (House, Senate, Presidency, Vice-Presidency) between 1945 (the 79th Congress) and 2019 (the 116th Congress). The data includes information on the representative's demographic characteristics and political affiliation.
-
+The `congress` package contains term-level data on every US
+Congressional Representative (House, Senate, Presidency,
+Vice-Presidency) between 1945 (the 79th Congress) and 2019 (the 116th
+Congress). The data includes information on the representative’s
+demographic characteristics and political affiliation.
 
 ## Installation
 
-`congress` is a data package. The relatively large size of the data in the package means it is not suitable for hosting on [CRAN](https://cran.r-project.org/), the core R package repository. There are two ways to install it.
+`congress` is a data package. The relatively large size of the data in
+the package means it is not suitable for hosting on
+[CRAN](https://cran.r-project.org/), the core R package repository.
+There are two ways to install it.
 
 ### Install direct from GitHub
 
-You can install the beta version of congress from [GitHub](https://github.com/kjhealy/congress) with:
+You can install the beta version of congress from
+[GitHub](https://github.com/kjhealy/congress) with:
 
 ``` r
 devtools::install_github("kjhealy/congress")
@@ -30,64 +40,79 @@ devtools::install_github("kjhealy/congress")
 
 ### Installation using `drat`
 
-While using `install_github()` works just fine, it would be nicer to be able to just type `install.packages("congress")` or `update.packages("congress")` in the ordinary way. We can do this using Dirk Eddelbuettel's [drat](http://eddelbuettel.github.io/drat/DratForPackageUsers.html) package. Drat provides a convenient way to make R aware of package repositories other than CRAN.
+While using `install_github()` works just fine, it would be nicer to be
+able to just type `install.packages("congress")` or
+`update.packages("congress")` in the ordinary way. We can do this using
+Dirk Eddelbuettel’s
+[drat](http://eddelbuettel.github.io/drat/DratForPackageUsers.html)
+package. Drat provides a convenient way to make R aware of package
+repositories other than CRAN.
 
 First, install `drat`:
 
-
-```r
+``` r
 if (!require("drat")) {
     install.packages("drat")
     library("drat")
 }
 ```
 
-Then use `drat` to tell R about the repository where `congress` is hosted:
+Then use `drat` to tell R about the repository where `congress` is
+hosted:
 
-
-```r
+``` r
 drat::addRepo("kjhealy")
 ```
 
 You can now install `congress`:
 
-
-```r
+``` r
 install.packages("congress")
 ```
 
-To ensure that the `congress` repository is always available, you can add the following line to your `.Rprofile` or `.Rprofile.site` file:
+To ensure that the `congress` repository is always available, you can
+add the following line to your `.Rprofile` or `.Rprofile.site` file:
 
-
-```r
+``` r
 drat::addRepo("kjhealy")
 ```
 
-With that in place you'll be able to do `install.packages("congress")` or `update.packages("congress")` and have everything work as you'd expect. 
+With that in place you’ll be able to do `install.packages("congress")`
+or `update.packages("congress")` and have everything work as you’d
+expect.
 
-Note that the drat repository only contains data packages that are not on CRAN, so you will never be in danger of grabbing the wrong version of any other package.
-
+Note that the drat repository only contains data packages that are not
+on CRAN, so you will never be in danger of grabbing the wrong version of
+any other package.
 
 ## Loading the data
 
-The data is stored as a tibble and works best with (but does not strictly require) the [tidyverse](http://tidyverse.org/) libraries.
+The data is stored as a tibble and works best with (but does not
+strictly require) the [tidyverse](http://tidyverse.org/) libraries.
 
-
-```r
+``` r
 library(tidyverse)
+#> ── Attaching packages ──────────────────────────────────────────────────────────────────────────────────── tidyverse 1.2.1 ──
+#> ✔ ggplot2 3.2.1     ✔ purrr   0.3.2
+#> ✔ tibble  2.1.3     ✔ dplyr   0.8.3
+#> ✔ tidyr   1.0.0     ✔ stringr 1.4.0
+#> ✔ readr   1.3.1     ✔ forcats 0.4.0
+#> ── Conflicts ─────────────────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
+#> ✖ dplyr::filter()  masks stats::filter()
+#> ✖ purrr::is_null() masks testthat::is_null()
+#> ✖ dplyr::lag()     masks stats::lag()
+#> ✖ dplyr::matches() masks tidyr::matches(), testthat::matches()
 ```
 
 Load the data:
 
-
-```r
+``` r
 library(congress)
 ```
 
 To look at the tibble that contains the data, do this:
 
-
-```r
+``` r
 congress
 #> # A tibble: 21,009 x 32
 #>    congress   pid last  first middle suffix born       death      sex  
