@@ -8,7 +8,7 @@
 [![Travis build status](https://travis-ci.com/kjhealy/congress.svg?branch=master)](https://travis-ci.com/kjhealy/congress)
 <!-- badges: end -->
 
-`congress` is a dataset of individuals who have served in the US Congress since 1945. Each row is an individual's spell in Congress in some elected office: US Representative, US Senator, President, or Vice-President.
+`congress` is a dataset of individuals who have served in the US Congress since 1945. Each row is an individual's spell in a Congressional term in some elected office: US Representative, US Senator, President, or Vice-President.
 
 ## Installation
 
@@ -75,6 +75,16 @@ The data is stored as a tibble and works best with (but does not strictly requir
 
 ```r
 library(tidyverse)
+#> ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.0 ──
+#> ✔ ggplot2 3.3.0     ✔ purrr   0.3.3
+#> ✔ tibble  3.0.0     ✔ dplyr   0.8.5
+#> ✔ tidyr   1.0.2     ✔ stringr 1.4.0
+#> ✔ readr   1.3.1     ✔ forcats 0.5.0
+#> ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+#> ✖ dplyr::filter()  masks stats::filter()
+#> ✖ purrr::is_null() masks testthat::is_null()
+#> ✖ dplyr::lag()     masks stats::lag()
+#> ✖ dplyr::matches() masks tidyr::matches(), testthat::matches()
 ```
 
 Load the data:
