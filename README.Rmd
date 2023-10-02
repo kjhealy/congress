@@ -13,23 +13,19 @@ knitr::opts_chunk$set(
 )
 ```
 
-# congress
+# dwcongress
 
-<!-- badges: start -->
-[![Travis build status](https://travis-ci.com/kjhealy/congress.svg?branch=master)](https://travis-ci.com/kjhealy/congress)
-<!-- badges: end -->
-
-`congress` is a dataset of individuals who have served in the US Congress since 1945. Each row is an individual's spell in a Congressional term in some elected office: US Representative, US Senator, President, or Vice-President.
+`dwcongress` is a dataset of individuals who have served in the US Congress since 1945. Each row is an individual's spell in a Congressional term in some elected office: US Representative, US Senator, President, or Vice-President.
 
 ## Installation
 
 
-The `congress` package contains term-level data on every US Congressional Representative (House, Senate, Presidency, Vice-Presidency) between 1945 (the 79th Congress) and 2019 (the 116th Congress). The data includes information on the representative's demographic characteristics and political affiliation.
+The `dwcongress` package contains term-level data on every US Congressional Representative (House, Senate, Presidency, Vice-Presidency) between 1945 (the 79th Congress) and 2019 (the 116th Congress). The data includes information on the representative's demographic characteristics and political affiliation.
 
 
 ## Installation
 
-`congress` is a data package. The relatively large size of the data in the package means it is not suitable for hosting on [CRAN](https://cran.r-project.org/), the core R package repository. There are two ways to install it.
+`dwcongress` is a data package. The relatively large size of the data in the package means it is not suitable for hosting on [CRAN](https://cran.r-project.org/), the core R package repository. There are two ways to install it.
 
 ### Install direct from GitHub
 
@@ -41,7 +37,7 @@ devtools::install_github("kjhealy/congress")
 
 ### Installation using `drat`
 
-While using `install_github()` works just fine, it would be nicer to be able to just type `install.packages("congress")` or `update.packages("congress")` in the ordinary way. We can do this using Dirk Eddelbuettel's [drat](http://eddelbuettel.github.io/drat/DratForPackageUsers.html) package. Drat provides a convenient way to make R aware of package repositories other than CRAN.
+While using `install_github()` works just fine, it would be nicer to be able to just type `install.packages("dwcongress")` or `update.packages("dwcongress")` in the ordinary way. We can do this using Dirk Eddelbuettel's [drat](http://eddelbuettel.github.io/drat/DratForPackageUsers.html) package. Drat provides a convenient way to make R aware of package repositories other than CRAN.
 
 First, install `drat`:
 
@@ -52,25 +48,25 @@ if (!require("drat")) {
 }
 ```
 
-Then use `drat` to tell R about the repository where `congress` is hosted:
+Then use `drat` to tell R about the repository where `dwcongress` is hosted:
 
 ```{r drat-congress}
 drat::addRepo("kjhealy")
 ```
 
-You can now install `congress`:
+You can now install `dwcongress`:
 
 ```{r congress-drat, eval = FALSE}
-install.packages("congress")
+install.packages("dwcongress")
 ```
 
-To ensure that the `congress` repository is always available, you can add the following line to your `.Rprofile` or `.Rprofile.site` file:
+To ensure that the `dwcongress` repository is always available, you can add the following line to your `.Rprofile` or `.Rprofile.site` file:
 
 ```{r rprofile}
 drat::addRepo("kjhealy")
 ```
 
-With that in place you'll be able to do `install.packages("congress")` or `update.packages("congress")` and have everything work as you'd expect. 
+With that in place you'll be able to do `install.packages("dwcongress")` or `update.packages("dwcongress")` and have everything work as you'd expect. 
 
 Note that the drat repository only contains data packages that are not on CRAN, so you will never be in danger of grabbing the wrong version of any other package.
 
@@ -86,7 +82,7 @@ library(tidyverse)
 Load the data:
 
 ```{r load}
-library(congress)
+library(dwcongress)
 ```
 
 To look at the tibble that contains the data, do this:
